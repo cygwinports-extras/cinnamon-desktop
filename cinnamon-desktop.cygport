@@ -1,0 +1,26 @@
+inherit gnome2
+
+NAME="cinnamon-desktop"
+VERSION=2.6.5
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="Cinnamon desktop library"
+DESCRIPTION="The libcinnamon-desktop library provides API shared by several
+applications on the desktop, but that cannot live in the platform for various
+reasons."
+HOMEPAGE="http://cinnamon.linuxmint.com/"
+SRC_URI="https://github.com/linuxmint/${NAME}/archive/${VERSION}/${NAME}-${VERSION}.tar.gz"
+
+PKG_NAMES="lib${NAME}4 lib${NAME}-common lib${NAME}-devel girepository-CinnamonDesktop3.0"
+libcinnamon_desktop4_REQUIRES="libcinnamon-desktop-common iso-codes"
+libcinnamon_desktop4_CONTENTS='usr/bin/*-4.dll'
+libcinnamon_desktop_common_CONTENTS="
+	etc/ usr/share/doc/
+	usr/share/glib-2.0/schemas/
+	usr/share/libcinnamon-desktop/
+	usr/share/locale/
+"
+libcinnamon_desktop_devel_CONTENTS='usr/include/ usr/lib/lib* usr/lib/pkgconfig/'
+girepository_CinnamonDesktop3_0_CONTENTS="usr/*/gir*/C*Desktop*-3.0.*"
+PKG_IGNORE="usr/*/cinnamon-rr-debug.exe"
+
