@@ -1,7 +1,7 @@
 inherit gnome2
 
 NAME="cinnamon-desktop"
-VERSION=2.6.5
+VERSION=2.8.0
 RELEASE=1
 CATEGORY="Libs"
 SUMMARY="Cinnamon desktop library"
